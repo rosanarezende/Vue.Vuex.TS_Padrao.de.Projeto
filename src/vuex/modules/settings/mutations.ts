@@ -1,4 +1,4 @@
-import { ISettingsState, ICountry } from "./types";
+import { ISettingsState, ICountry } from './types';
 
 export default {
   setCountries(state: ISettingsState, payload: ICountry[]) {
@@ -11,5 +11,5 @@ export default {
   },
   settingError(state: ISettingsState) {
     state.error = true;
-  }
+  },
 };

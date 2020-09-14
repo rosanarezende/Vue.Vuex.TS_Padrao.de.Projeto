@@ -1,23 +1,23 @@
-import { ActionContext } from "vuex";
-import axios from "axios";
-import { ISettingsState, ICountry } from "./types";
+import { ActionContext } from 'vuex';
+import axios from 'axios';
+import { ISettingsState, ICountry } from './types';
 
 export default {
   fetchCountries(store: ActionContext<ISettingsState, any>): void {
     axios({
-      url: "https://restcountries.eu/rest/v2/all"
+      url: 'https://restcountries.eu/rest/v2/all',
     }).then(
-      response => {
+      (response) => {
         const counties = response && response.data;
-        store.commit("setCountries", counties);
+        store.commit('setCountries', counties);
       },
-      error => {
+      (error) => {
         console.log(error);
-        store.commit("settingError");
-      }
+        store.commit('settingError');
+      },
     );
   },
   setSelectedCountry(store: ActionContext<ISettingsState, any>, country: ICountry): void {
-    store.commit("setSelectedCountry", country);
-  }
+    store.commit('setSelectedCountry', country);
+  },
 };

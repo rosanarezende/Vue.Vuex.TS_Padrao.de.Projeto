@@ -1,4 +1,4 @@
-import { ISettingsState, ICountry } from "./types";
+import { ISettingsState, ICountry } from './types';
 
 export default {
   getCountries(state: ISettingsState): ICountry[] {
@@ -9,5 +9,5 @@ export default {
   },
   getErrorStatus(state: ISettingsState): boolean {
     return state.error;
-  }
+  },
 };
